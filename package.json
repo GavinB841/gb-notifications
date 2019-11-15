@@ -1,6 +1,6 @@
 {
   "name": "gb-notifications",
-  "version": "0.0.0",
+  "version": "0.0.0-development",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -14,7 +14,11 @@
     "build:showcase": "ng build gb-notifications-showcase --base-href='https://gavinb841.github.io/gb-notifications/'",
     "publish:demo": "npx angular-cli-ghpages --dir=./dist/gb-notifications-showcase",
     "copy:readme": "copyfiles ./README.md ./dist/ng-simple-alert",
-    "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+    "semantic-release": "semantic-release",
+    "adjust-version": "npm-run-all adjust-version:*",
+    "adjust-version:lib": "rjp projects/gb-notifications/package.json version $VERSION",
+    "adjust-version:main": "rjp package.json version $VERSION"
   },
   "private": true,
   "dependencies": {
@@ -41,6 +45,7 @@
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
     "@commitlint/prompt": "^8.2.0",
+    "@semantic-release/exec": "^3.3.8",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
@@ -59,6 +64,7 @@
     "ng-packagr": "^4.2.0",
     "prettier": "^1.19.1",
     "protractor": "~5.4.0",
+    "semantic-release": "^15.13.30",
     "ts-node": "~7.0.0",
     "tsickle": ">=0.29.0",
     "tslib": "^1.9.0",
@@ -75,5 +81,9 @@
       "prettier --write",
       "git add"
     ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GavinB841/gb-notifications.git"
   }
 }
