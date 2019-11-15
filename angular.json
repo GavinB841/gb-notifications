@@ -2,5 +2,169 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
-  "projects": {}
+  "projects": {
+    "gb-notifications": {
+      "root": "projects/gb-notifications",
+      "sourceRoot": "projects/gb-notifications/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/gb-notifications/tsconfig.lib.json",
+            "project": "projects/gb-notifications/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/gb-notifications/src/test.ts",
+            "tsConfig": "projects/gb-notifications/tsconfig.spec.json",
+            "karmaConfig": "projects/gb-notifications/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/gb-notifications/tsconfig.lib.json",
+              "projects/gb-notifications/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "gb-notifications-showcase": {
+      "root": "projects/gb-notifications-showcase/",
+      "sourceRoot": "projects/gb-notifications-showcase/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/gb-notifications-showcase",
+            "index": "projects/gb-notifications-showcase/src/index.html",
+            "main": "projects/gb-notifications-showcase/src/main.ts",
+            "polyfills": "projects/gb-notifications-showcase/src/polyfills.ts",
+            "tsConfig": "projects/gb-notifications-showcase/tsconfig.app.json",
+            "assets": [
+              "projects/gb-notifications-showcase/src/favicon.ico",
+              "projects/gb-notifications-showcase/src/assets"
+            ],
+            "styles": [
+              "projects/gb-notifications-showcase/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/gb-notifications-showcase/src/environments/environment.ts",
+                  "with": "projects/gb-notifications-showcase/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "gb-notifications-showcase:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "gb-notifications-showcase:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "gb-notifications-showcase:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/gb-notifications-showcase/src/test.ts",
+            "polyfills": "projects/gb-notifications-showcase/src/polyfills.ts",
+            "tsConfig": "projects/gb-notifications-showcase/tsconfig.spec.json",
+            "karmaConfig": "projects/gb-notifications-showcase/karma.conf.js",
+            "styles": [
+              "projects/gb-notifications-showcase/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/gb-notifications-showcase/src/favicon.ico",
+              "projects/gb-notifications-showcase/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/gb-notifications-showcase/tsconfig.app.json",
+              "projects/gb-notifications-showcase/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "gb-notifications-showcase-e2e": {
+      "root": "projects/gb-notifications-showcase-e2e/",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/gb-notifications-showcase-e2e/protractor.conf.js",
+            "devServerTarget": "gb-notifications-showcase:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "gb-notifications-showcase:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/gb-notifications-showcase-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "gb-notifications"
 }
