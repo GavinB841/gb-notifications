@@ -41,3 +41,10 @@ jobs:
         - npm run build:lib
         - npm run publish:lib
       if: branch = master
+    - stage: npm release
+      scipt: echo "Deploying to npm...."
+      deploy:
+        provider: npm
+        api_key: $NPM_TOKEN
+        email: NPM_EMAIL
+
