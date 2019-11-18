@@ -45,6 +45,6 @@ jobs:
       scipt: echo "Deploying to npm...."
       deploy:
         provider: npm
-        api_key: $NPM_TOKEN
-        email: $NPM_EMAIL
+        api_key: $API_KEY
+        email: $EMAIL
 
