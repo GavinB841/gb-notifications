@@ -11,7 +11,7 @@
     "report-coverage:lib": "cat ./coverage/ng-alert/lcov.info | codecov",
     "build": "npm run build:lib && npm run build:demo",
     "build:lib": "npm run copy:readme && ng build ng-sortgrid",
-    "build:showcase": "ng build gb-notifications-showcase --base-href='https://gavinb841.github.io/gb-notifications/'",
+    "build:demo": "ng build gb-notifications-showcase --base-href='https://gavinb841.github.io/gb-notifications/'",
     "publish:demo": "npx angular-cli-ghpages --dir=./dist/gb-notifications-showcase",
     "copy:readme": "copyfiles ./README.md ./dist/ng-simple-alert",
     "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
