@@ -10,7 +10,7 @@
     "e2e": "ng e2e",
     "report-coverage:lib": "cat ./coverage/ng-alert/lcov.info | codecov",
     "build": "npm run build:lib && npm run build:demo",
-    "build:lib": "npm run copy:readme && ng build ng-sortgrid",
+    "build:lib": "npm run copy:readme && ng build gb-notifications",
     "build:demo": "ng build gb-notifications-showcase --base-href='https://gavinb841.github.io/gb-notifications/'",
     "publish:demo": "npx angular-cli-ghpages --dir=./dist/gb-notifications-showcase",
     "publish:lib": "npx semantic-release",
