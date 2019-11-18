@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "test": "ng test",
+    "test": "ng test --watch=false",
     "test:lib-coverage": "ng test gb-notifications --code-coverage --watch=false",
     "lint": "ng lint",
     "e2e": "ng e2e",
