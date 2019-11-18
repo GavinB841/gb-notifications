@@ -13,6 +13,7 @@
     "build:lib": "npm run copy:readme && ng build ng-sortgrid",
     "build:demo": "ng build gb-notifications-showcase --base-href='https://gavinb841.github.io/gb-notifications/'",
     "publish:demo": "npx angular-cli-ghpages --dir=./dist/gb-notifications-showcase",
+    "publish:lib": "npx semantic-release",
     "copy:readme": "copyfiles ./README.md ./dist/ng-simple-alert",
     "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
     "semantic-release": "semantic-release",
