@@ -32,7 +32,8 @@ jobs:
       deploy:
         provider: pages
         skip_cleanup: true
-        github_token: $GH_TOKEN
+        edge: true
+        github_token: $GITHUB_TOKEN
         local_dir: dist/gb-notifications-showcase
       if: branch = master
     - stage: build & publish lib
