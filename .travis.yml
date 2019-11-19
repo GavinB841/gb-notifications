@@ -31,7 +31,7 @@ jobs:
         - npm run build:demo
       deploy:
         provider: pages
-        skip_cleanup: true
+        cleanup: false
         edge: true
         github_token: $GITHUB_TOKEN
         local_dir: dist/gb-notifications-showcase
@@ -42,9 +42,9 @@ jobs:
         - npm run publish:lib
       if: branch = master
     - stage: npm release
-      scipt: echo "Deploying to npm...."
+      script: echo "Deploying to npm...."
       deploy:
         provider: npm
-        api_key: "b17c00b4-49d8-43da-9b83-6365db96a4fc"
-        email: "Gavin.Boyle@hotmail.com"
+        api_key: $NPM_TOKEN
+        email: $NPM_EMAIL
 
