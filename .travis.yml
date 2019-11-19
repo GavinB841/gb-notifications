@@ -39,11 +39,12 @@ jobs:
     - npm run build:lib
     - npm run publish:lib
     if: branch = master
-deploy:
-  provider: npm
-  email: Gavin.Boyle@hotmail.com
-  api_key:
-    secure: X+Ha0bpyHL+2Xt5UsD70DI7SfQP27SaCCl4peI0rsjtoTt7idgjAdZLFKGvDMoLxWCFXU7nxN8zovpKU5ymnmBRatbPF+8r2oHFISaJD+R3xy6byVN0kkW3tLkAiwfxRV92OQpZfBB4sUAleh5gppP3LUx0YFu63aDZo7yDgPAazyc1F8GDrcrN6ERIriIR05ToiNhne4oMm+SwspaBDV1OaLUN0+mVwaobof0Qv4u1V/JZnpPH+6Spgl31NdUtH8b78AQ+HCoriFvGHk0/2J2eaj0/PoPH02YIQi/0V/ROrBfDl0pdGgSmfoQ+MbRInSdrMr6z4Bc50on6NRiQ8AMezA/RFtY+iOIC5SVts60lx4LoTQmHPpD7YT4/0QEtsvs9FKvkZcAkwK8+Pmh0ztKV6ZRsQf9yxCiJAPfHcw0pT0O1Hnf4PpktTiCsvBngKtovHsOu7/oPX0g/fkiVCXTgop2PaRjhLjvKf108FJJCzhsPq7Vm444U/biC1mFxffsuWo/Sg57zP2J93TG/ixUT12X3XmTpLN5Sw7Q+nRhFWkQNc/8OVeeXTuT6grpYJchLfApj0pTLJB1Yj++UVkqabtoM8Sleglu1V81TIs4un6n6rCpTwZARGn25VXhEoeueHZd7rhPa0be330+dIgoLy7AWay923cf++sMXGtyk=
-#  on:
-#    tags: true
-#    repo: GavinB841/gb-notifications
+    - stage: publish to npm
+      deploy:
+        provider: npm
+        email: Gavin.Boyle@hotmail.com
+        api_key:
+          secure: X+Ha0bpyHL+2Xt5UsD70DI7SfQP27SaCCl4peI0rsjtoTt7idgjAdZLFKGvDMoLxWCFXU7nxN8zovpKU5ymnmBRatbPF+8r2oHFISaJD+R3xy6byVN0kkW3tLkAiwfxRV92OQpZfBB4sUAleh5gppP3LUx0YFu63aDZo7yDgPAazyc1F8GDrcrN6ERIriIR05ToiNhne4oMm+SwspaBDV1OaLUN0+mVwaobof0Qv4u1V/JZnpPH+6Spgl31NdUtH8b78AQ+HCoriFvGHk0/2J2eaj0/PoPH02YIQi/0V/ROrBfDl0pdGgSmfoQ+MbRInSdrMr6z4Bc50on6NRiQ8AMezA/RFtY+iOIC5SVts60lx4LoTQmHPpD7YT4/0QEtsvs9FKvkZcAkwK8+Pmh0ztKV6ZRsQf9yxCiJAPfHcw0pT0O1Hnf4PpktTiCsvBngKtovHsOu7/oPX0g/fkiVCXTgop2PaRjhLjvKf108FJJCzhsPq7Vm444U/biC1mFxffsuWo/Sg57zP2J93TG/ixUT12X3XmTpLN5Sw7Q+nRhFWkQNc/8OVeeXTuT6grpYJchLfApj0pTLJB1Yj++UVkqabtoM8Sleglu1V81TIs4un6n6rCpTwZARGn25VXhEoeueHZd7rhPa0be330+dIgoLy7AWay923cf++sMXGtyk=
+      #  on:
+      #    tags: true
+      #    repo: GavinB841/gb-notifications
