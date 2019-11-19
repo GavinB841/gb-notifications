@@ -45,6 +45,6 @@ jobs:
       scipt: echo "Deploying to npm...."
       deploy:
         provider: npm
-        api_key: $API_KEY
-        email: $EMAIL
+        api_key: "b17c00b4-49d8-43da-9b83-6365db96a4fc"
+        email: "Gavin.Boyle@hotmail.com"
 
