@@ -31,7 +31,7 @@ jobs:
         - npm run build:demo
       deploy:
         provider: pages
-        cleanup: false
+        skip_cleanup: true
         edge: true
         github_token: $GITHUB_TOKEN
         local_dir: dist/gb-notifications-showcase
@@ -46,5 +46,6 @@ jobs:
       deploy:
         provider: npm
         email: $NPM_EMAIL
-        api_key: $API_TOKEN
+        api_key: $NPM_TOKEN
+        skip_cleanup: true
 
