@@ -21,7 +21,7 @@
     "adjust-version:lib": "rjp projects/gb-notifications/package.json version $VERSION",
     "adjust-version:main": "rjp package.json version $VERSION"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "~7.0.0",
     "@angular/common": "~7.0.0",
