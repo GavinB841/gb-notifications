@@ -3,7 +3,16 @@ import { GbNotificationsService } from '../../../gb-notifications/src/lib/gb-not
 
 @Component({
   selector: 'app-root',
-  templateUrl: 'app.component.html',
+  template: `
+    <h2>Simple Notifications</h2>
+    <div class="simple-notifications">
+      <button class="success-angle" (click)="createSuccessMessage()">Create success alert</button>
+      <button class="danger-shadow" (click)="createDangerMessage()">Create danger alert</button>
+      <button class="warning-gradient" (click)="createWarningMessage()">Create warning alert</button>
+      <button class="info-pulse" (click)="createInfoMessage()">Create info alert</button>
+      <gb-notifications></gb-notifications>
+    </div>
+  `,
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
