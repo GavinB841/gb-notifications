@@ -43,10 +43,11 @@ jobs:
       if: branch = master
     - stage: npm release
       script: echo "Deploying to npm...."
+      before_deploy:
+        - cd dist/gb-notifications
       deploy:
         provider: npm
         email: "$NPM_EMAIL"
         api_key: "$NPM_TOKEN"
         edge: true
         cleanup: false
-        local_dir: dist/gb-notifications
