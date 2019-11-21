@@ -165,17 +165,6 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
-/***/ "./src/app/app.component.html":
-/*!************************************!*\
-  !*** ./src/app/app.component.html ***!
-  \************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<h2>Simple Notifications</h2>\n<div class=\"simple-notifications\">\n  <button class=\"success-angle\" (click)=\"createSuccessMessage()\">Create success alert</button>\n  <button class=\"danger-shadow\" (click)=\"createDangerMessage()\">Create danger alert</button>\n  <button class=\"warning-gradient\" (click)=\"createWarningMessage()\">Create warning alert</button>\n  <button class=\"info-pulse\" (click)=\"createInfoMessage()\">Create info alert</button>\n<gb-notifications></gb-notifications>\n</div>\n\n"
-
-/***/ }),
-
 /***/ "./src/app/app.component.scss":
 /*!************************************!*\
   !*** ./src/app/app.component.scss ***!
@@ -229,7 +218,7 @@ var AppComponent = /** @class */ (function () {
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-root',
-            template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
+            template: "\n    <h2>Simple Notifications</h2>\n    <div class=\"simple-notifications\">\n      <button class=\"success-angle\" (click)=\"createSuccessMessage()\">Create success alert</button>\n      <button class=\"danger-shadow\" (click)=\"createDangerMessage()\">Create danger alert</button>\n      <button class=\"warning-gradient\" (click)=\"createWarningMessage()\">Create warning alert</button>\n      <button class=\"info-pulse\" (click)=\"createInfoMessage()\">Create info alert</button>\n      <gb-notifications></gb-notifications>\n    </div>\n  ",
             styles: [__webpack_require__(/*! ./app.component.scss */ "./src/app/app.component.scss")]
         }),
         __metadata("design:paramtypes", [_gb_notifications_src_lib_gb_notifications_service__WEBPACK_IMPORTED_MODULE_1__["GbNotificationsService"]])
