@@ -49,3 +49,4 @@ jobs:
         api_key: "$NPM_TOKEN"
         edge: true
         cleanup: false
+        local_dir: dist/gb-notifications
